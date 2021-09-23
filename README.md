@@ -1,4 +1,7 @@
 # MotilitAI
+
+<img src="./grabs.png" width="500">
+
 This repository contains code for automatic Motility Prediction on the VISEM dataset.
 
 ## Citing
