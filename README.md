@@ -45,14 +45,14 @@ python models/[emsd|bow]-prediction-models.py <features_fold_1> <features_fold_2
 | -md, --model-dir | string | Model directory. | false | model |
 | -ri, --random-iterations | int | Number of random grid serach iterations. | false | 10 |
 
-#### Specific CLI option for motility prediction with emsd features
+#### Specific CLI options for motility prediction with emsd features
 
 | Variable                  | Type                         | Description                          | Required | Default value |
 |---------------------------|------------------------------|--------------------------------------|----------|---------------|
 | -ma, --model-architecture | choices=[svr, mlp, cnn, rnn] | Type of neural network architecture. | false | cnn |
 | -sd, --semen-data | string | Path to semen_data_analysis csv file. | false | sement_data_analysis.csv |
 
-#### Specific CLI option for motility prediction with BoWs
+#### Specific CLI options for motility prediction with BoWs
 
 | Variable                  | Type                         | Description                          | Required | Default value |
 |---------------------------|------------------------------|--------------------------------------|----------|---------------|
