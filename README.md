@@ -31,7 +31,6 @@ conda activate optical-flow-visem
 There is an `environment.yml` file with all dependencies.
 
 ## Usage
-WIP
 
 ### Prediction Models
 There are two Machine Learning approaches, one using ensemble mean squared displacement (emsd) features to train different models, and one with Bags-of-Words (BoWs) created from either custom movement statistics (cms) or individual mean squared displacement (imsd) features.
