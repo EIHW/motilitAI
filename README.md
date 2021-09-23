@@ -4,7 +4,7 @@
 <img src="./original.gif" width="360"> <img src="./tracked.gif" width="364">
 </p>
 
-With **motilitAI**, human semen samples from the ![VISEM dataset](https://datasets.simula.no/visem/) can be automatically assessed in respect to sperm motility. Several regression models are trained to
+With **motilitAI**, human semen samples from the [VISEM dataset](https://zenodo.org/record/2640506) can be automatically assessed in respect to sperm motility. Several regression models are trained to
 automatically predict the percentage (0 to 100) of progressive, non-progressive, and immotile spermatozoa in a given sample. The videos are adopted for unsupervised tracking and two different feature extraction methods, in particular custom movement statistics (cms) and mean squared displacement features (msd). We train Support Vector Regressors (SVR), Multilayer Perceptron (MLP) models, Convolutional Neural Networks (CNNs), and Recurrent Neural Networks (RNNs) on the extracted features. Best results are achieved using a linear SVR on an aggregated and quantised representation of individual displacement features of each sperm cell.
 
 ## Citing
