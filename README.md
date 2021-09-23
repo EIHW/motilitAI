@@ -36,6 +36,29 @@ WIP
 ### Prediction Models
 There are two Machine Learning approaches, one using ensemble mean squared displacement (emsd) features to train different models, and one with Bags-of-Words (BoWs) created from either custom movement statistics (cms) or individual mean squared displacement (imsd) features.
 ```
-models/emsd-prediction-models.py
-models/bow-prediction-models.py 
+python models/[emsd|bow]-prediction-models.py <features_fold_1> <features_fold_2> <features_fold_3> <additional options>
 ```
+
+#### Shared CLI options
+
+| Variable                  | Type                         | Description                          | Required | Default value |
+|---------------------------|------------------------------|--------------------------------------|----------|---------------|
+| -md, --model-dir | string | Model directory. | false | model |
+| -ri, --random-iterations | int | Number of random grid serach iterations. | false | 10 |
+
+#### Specific CLI option for motility prediction with emsd features
+
+| Variable                  | Type                         | Description                          | Required | Default value |
+|---------------------------|------------------------------|--------------------------------------|----------|---------------|
+| -ma, --model-architecture | choices=[svr, mlp, cnn, rnn] | Type of neural network architecture. | false | cnn |
+| -sd, --semen-data | string | Path to semen_data_analysis csv file. | false | sement_data_analysis.csv |
+
+#### Specific CLI option for motility prediction with BoWs
+
+| Variable                  | Type                         | Description                          | Required | Default value |
+|---------------------------|------------------------------|--------------------------------------|----------|---------------|
+| -bd, --bow-dirname | string | BoW directory name. | true |  |
+| -ma, --model-architecture | choices=[svr, mlp] | Type of neural network architecture. | false | mlp |
+| -s, --sizes | int | Sizes for BoW. | 1+ | [2500, 5000] |
+| -a, --assignment-vectors | int | Number of assigned codebook vectors. | 1+ | [50] |
+| -sn, --session-number | int | Starting session. | false | 0 |
