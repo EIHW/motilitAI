@@ -1,0 +1,19 @@
+features:
+  displacement:
+    window: 10
+    hop: 5
+    padding: constant
+  xbow:
+    sizes:
+      - 2500
+      - 5000
+      - 10000
+      - 20000
+    assignment_vectors:
+      - 1
+      - 10
+      - 50
+      - 100
+      - 200
+      - 500
+    standardize_input: true

@@ -111,4 +111,4 @@ models/model
 
 slurm/
 shell-scripts/
-preprocessing/
+# preprocessing/

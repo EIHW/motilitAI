@@ -23,16 +23,19 @@ If you use **motilitAI** in your research work, you are kindly asked to acknowle
 
 ## Installation
 
-Create a virtual environment, e.g. with conda:
+Create and activate a conda environment from the provided `environment.yml` file:
 ```bash
-conda create -n optical-flow-visem
-conda activate optical-flow-visem
+conda env create --name motilitAI --file=environment.yml
+conda activate motilitAI
 ```
 
-### Dependencies
-There is an `environment.yml` file with all dependencies.
-
 ## Usage
+
+
+### Feature extraction
+Put the extracted visem dataset into `./data/raw` such that you have a folder `./data/raw/videos` which contains all of the original videosamples.
+
+Then, you can run `dvc repro` to preprocess the videos, extract displacement features and apply XBoW quantisation to them.
 
 ### Prediction Models
 There are two Machine Learning approaches, one using ensemble mean squared displacement (emsd) features to train different models, and one with Bags-of-Words (BoWs) created from either custom movement statistics (cms) or individual mean squared displacement (imsd) features.

@@ -1,0 +1,3 @@
+[submodule "openXBOW"]
+	path = openXBOW
+	url = https://github.com/openXBOW/openXBOW.git

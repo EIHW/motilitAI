@@ -35,7 +35,7 @@ if __name__ == "__main__":
     help='Model directory.')
     parser.add_argument('-ri', '--random-iterations', type=int,  default=10,
     help='Number of random grid serach iterations.')
-    parser.add_argument('-l', '--target-labels', type=str, choices=['motility', 'morphology'], 
+    parser.add_argument('-l', '--target-labels', type=str, choices=['motility', 'morphology'],
                         default='motility', help='Target labels (default: motility)')
     parser.add_argument('-sd', '--semen-data', type=str, default='sement_data_analysis.csv', help='Path to semen_data_analysis csv file.')
     args = parser.parse_args()
@@ -49,8 +49,7 @@ if __name__ == "__main__":
         df[df.columns[0]] = df[df.columns[0]].apply(lambda x: int(x.split('_')[0]))
         for l in PATIENT_RELATED + MOTILITY_LABELS + MORPHOLOGY_LABELS:
             if l in df.columns:
-                df.pop(l) 
+                df.pop(l)
 
     optimize_parameters(fold_dataframes, fold_labels=args.target_labels, model_type=args.model_architecture, n_iter=args.random_iterations, use_prd=False, semen_data=args.semen_data, model_dir=args.model_dir)
-    
-  
+

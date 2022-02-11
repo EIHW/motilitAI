@@ -1,0 +1,37 @@
+schema: '2.0'
+stages:
+  test:
+    cmd: which python
+  features@displacement:
+    cmd: ./preprocessing/features/displacement.py
+    deps:
+    - path: ./data/processed/cut-videos
+      md5: 8182d95c11b75c4548df940e85f18ade.dir
+      size: 4915857994
+      nfiles: 720
+    params:
+      params.yaml:
+        features.displacement:
+          window: 10
+          hop: 5
+          padding: constant
+    outs:
+    - path: ./features/displacement
+      md5: 40cbdd2465cde66517cb00f0c6568731.dir
+      size: 6612671806
+      nfiles: 7
+  cut_videos:
+    cmd: ./preprocessing/cut_videos.py
+    deps:
+    - path: data/raw/videos
+      md5: 13690184dc4d7400b9c80d1224865fd9.dir
+      size: 35591403824
+      nfiles: 85
+    - path: preprocessing/cut_videos.py
+      md5: 844d1b32ad5306a126ac09cdf9f6aa3c
+      size: 1733
+    outs:
+    - path: data/processed/cut-videos
+      md5: 8182d95c11b75c4548df940e85f18ade.dir
+      size: 4915857994
+      nfiles: 720

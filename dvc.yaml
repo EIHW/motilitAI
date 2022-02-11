@@ -1,0 +1,19 @@
+stages:
+  features:
+    foreach:
+    - displacement
+    do:
+      cmd: ./preprocessing/features/${item}.py
+      deps:
+      - ./data/processed/cut-videos
+      params:
+      - features.${item}
+      outs:
+      - ./features/${item}
+  cut_videos:
+    cmd: ./preprocessing/cut_videos.py
+    deps:
+    - data/raw/videos
+    - preprocessing/cut_videos.py
+    outs:
+    - data/processed/cut-videos
